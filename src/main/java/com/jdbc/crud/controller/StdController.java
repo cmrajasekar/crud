@@ -55,9 +55,4 @@ public class StdController {
         return "redirect:/";
     }
 
-    @RequestMapping("/deleted")
-    public String dMethod(@RequestParam int id){
-        repo.deleteById(id);
-        return "redirect:/";
-    }
 }
