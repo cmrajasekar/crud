@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Student Database</title>
+    <style>
+        /* Material UI style soft background */
+        body {
+          margin: 0;
+          height: 100vh;
+          font-family: Inter, system-ui, sans-serif;
+          background: #f5f7fa; /* clean Material UI background */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        /* Material UI Paper-like card */
+        .container {
+          width: 360px;
+          padding: 32px;
+          border-radius: 24px;
+          /* removed glass effect */
+          background: #ffffff; /* solid like MUI Paper */
+          box-shadow: 0px 3px 6px rgba(0,0,0,0.1); /* MUI elevation */
+          animation: fadeIn 0.8s ease;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+        }
+
+        @keyframes fadeIn {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+          margin: 0 0 6px 0;
+          font-size: 1.6rem;
+          font-weight: 700;
+          color: #2d2d2d;
+          letter-spacing: -0.5px;
+        }
+
+        p {
+          margin: 0 0 22px;
+          color: #555;
+          font-size: 0.95rem;
+        }
+
+        .button-grid {
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          gap: 14px;
+          width: 100%;
+        }
+
+        button {
+          width: 100%;
+          padding: 12px;
+          border: none;
+          border-radius: 8px;
+          font-weight: 600;
+          font-size: 0.95rem;
+          cursor: pointer;
+          color: #ffffff;
+          transition: 0.18s ease;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 8px;
+          box-shadow: 0px 2px 4px rgba(0,0,0,0.12);
+        }
+
+        button:hover {
+          transform: translateY(-2px);
+          box-shadow: 0px 4px 10px rgba(0,0,0,0.18);
+        }
+
+        .create { background: #1976d2; }
+        .display { background: #2e7d32; }
+        .update { background: #ed6c02; }
+        .delete { background: #d32f2f; }
+
+        /* Icon style */
+        .icon {
+          font-size: 1.2rem;
+          opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2></h2>
+    <p>Select one of the options below</p>
+
+    <div class="button-grid">
+        <form action="/create">
+            <button class="create"><span class="icon">➕</span>Create</button>
+        </form>
+
+        <form action="/display">
+            <button class="display"><span class="icon">📄</span>Display</button>
+        </form>
+
+        <form action="/update">
+            <button class="update"><span class="icon">✏️</span>Update</button>
+        </form>
+
+        <form action="/delete">
+            <button class="delete"><span class="icon">🗑️</span>Delete</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>
